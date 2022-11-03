@@ -31,3 +31,26 @@ CREATE TABLE IF NOT EXISTS `accounts_main` (
   PRIMARY KEY (`steam`) USING BTREE,
   KEY `steam` (`steam`) USING BTREE
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- Copiando estrutura para tabela warzone5m.accounts_banneds
+CREATE TABLE IF NOT EXISTS `accounts_banneds` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `steam` varchar(50) NOT NULL,
+  `time` int(20) NOT NULL DEFAULT 0,
+  PRIMARY KEY (`id`),
+  KEY `id` (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- Copiando dados para a tabela warzone5m.accounts_banneds: ~0 rows (aproximadamente)
+
+-- Copiando estrutura para tabela warzone5m.accounts_data
+CREATE TABLE IF NOT EXISTS `accounts_data` (
+  `user_id` int(11) NOT NULL,
+  `dkey` varchar(100) NOT NULL,
+  `dvalue` text DEFAULT NULL,
+  PRIMARY KEY (`user_id`,`dkey`),
+  KEY `user_id` (`user_id`),
+  KEY `dkey` (`dkey`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- Copiando dados para a tabela hellzonedb.summerz_playerdata: ~8 rows (aproximadamente)
