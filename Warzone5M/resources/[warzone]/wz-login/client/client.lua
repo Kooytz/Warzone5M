@@ -17,6 +17,12 @@ CORESERVER = Tunnel.getInterface("wz-login")
 -----------------------------------------------------------------------------------------------------------------------------------------
 
 AddEventHandler("onClientResourceStart",function(resourceName)
-    print("asdoaksdjasidjasdjasuidhs")
-    print("asdoaksdjasidjasdjasuidhs")
+	if (GetCurrentResourceName() ~= resourceName) then
+		return
+	end
+
+    print("iniciei")
+
+	TriggerServerEvent("Queue:playerConnect")
+    ShutdownLoadingScreen()
 end)
