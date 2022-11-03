@@ -11,3 +11,14 @@ local Tunnel = module("wz-core","lib/Tunnel")
 WZ = {}
 Tunnel.bindInterface("wz-login",WZ)
 CORESERVER = Tunnel.getInterface("wz-login")
+
+-----------------------------------------------------------------------------------------------------------------------------------------
+-- [[ ONCLIENTRESOURCESTART ]]
+-----------------------------------------------------------------------------------------------------------------------------------------
+
+AddEventHandler("onClientResourceStart",function(resourceName)
+	if (GetCurrentResourceName() ~= resourceName) then
+		return
+	end
+
+end)
