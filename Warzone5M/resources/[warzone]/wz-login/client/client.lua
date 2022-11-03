@@ -2,9 +2,7 @@
 -- [[ CORE ]]
 -----------------------------------------------------------------------------------------------------------------------------------------
 
-local Proxy = module("lib/Proxy")
-local Tunnel = module("lib/Tunnel")
-CORE = Proxy.getInterface("CORE")
+local Tunnel = module("wz-core","lib/Tunnel")
 
 -----------------------------------------------------------------------------------------------------------------------------------------
 -- [[ CONNECTION ]]
@@ -12,25 +10,13 @@ CORE = Proxy.getInterface("CORE")
 
 WZ = {}
 Tunnel.bindInterface("wz-login",WZ)
-CORECLIENT = Tunnel.getInterface("wz-login")
+CORESERVER = Tunnel.getInterface("wz-login")
 
 -----------------------------------------------------------------------------------------------------------------------------------------
--- [[ PLAYERCONNECT ]]
+-- [[ ONCLIENTRESOURCESTART ]]
 -----------------------------------------------------------------------------------------------------------------------------------------
 
-local playerConnect = function(user_id,source)
-	Player(source).state.played = os.time()
-end
-
-AddEventHandler("playerConnect",playerConnect)
-
------------------------------------------------------------------------------------------------------------------------------------------
--- [[ PLAYERDISCONNECT ]]
------------------------------------------------------------------------------------------------------------------------------------------
-
---[[local playerDisconnect = function(user_id,source)
-	local timer = os.time() - Player(source).state.played
-	vRP.execute("characters/savePlayed", { id = user_id, played = timer })
-end
-
-AddEventHandler("playerDisconnect",playerDisconnect)]]
+AddEventHandler("onClientResourceStart",function(resourceName)
+    print("asdoaksdjasidjasdjasuidhs")
+    print("asdoaksdjasidjasdjasuidhs")
+end)

@@ -4,7 +4,7 @@
 
 local Proxy = module("lib/Proxy")
 local Tunnel = module("lib/Tunnel")
-CORE = Proxy.getInterface("CORE")
+CORE = Proxy.getInterface("wz-core")
 
 -----------------------------------------------------------------------------------------------------------------------------------------
 -- [[ CONNECTION ]]
