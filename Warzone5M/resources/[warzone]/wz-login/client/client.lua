@@ -31,4 +31,6 @@ AddEventHandler("onClientResourceStart",function(resourceName)
 
 	-- test
 	SendNUIMessage({ action = "GetProfile" })
+	SetNuiFocus(true,true)
+	print("uiuisustei")
 end)
