@@ -10,6 +10,12 @@ $(document).ready(() => {
                 $("#ConnectOnline").css("display", "none");
                 $("#UpdateOnline").css("display", "flex");
             break;
+
+            case "GetProfile":
+                $("#ConnectOnline").css("display", "none");
+                $("#UpdateOnline").css("display", "none");
+                $("#GetProfileOnline").css("display", "flex");
+            break;
         };
     });
 });

@@ -9,3 +9,4 @@
 
 **04/11/2022**
 4. Fixed loadingscreen
+5. Added some features to login

@@ -31,6 +31,10 @@ AddEventHandler("onClientResourceStart",function(resourceName)
 
 	SendNUIMessage({ action = "Update" }) -- Verificando atualização...
 
+	Citizen.Wait(3000)
+
+	SendNUIMessage({ action = "GetProfile" }) -- Obtendo perfil online
+
 	SetNuiFocus(true,true)
 	TriggerServerEvent("Queue:playerConnect")
 	ShutdownLoadingScreen()
