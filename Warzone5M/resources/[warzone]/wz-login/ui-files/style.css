@@ -1,0 +1,110 @@
+/* Body */
+
+body {
+    position:fixed;
+    right:0;
+    bottom:0;
+    width:100vw;
+    height:100vh;
+    object-fit:cover;
+    
+    background: url(warzone_art_loadingscreen.png)
+}
+
+.line1 {
+    position: absolute;
+    width:101vw;
+    height: 0px;
+    left: 0px;
+    top: 820px;
+
+    border: 1.2px solid rgba(90, 90, 90, 0.5);
+}
+
+.line2 {
+    position: absolute;
+    width:101vw;
+    height: 0px;
+    left: 0px;
+    top: 958px;
+
+    border: 1.2px solid rgba(90, 90, 90, 0.5);
+}
+
+.rectangle {
+    position: absolute;
+    width:101vw;
+    height: 128px;
+    left: 0px;
+    top: 826px;
+
+    background: rgba(15, 15, 15, 0.5);
+}
+
+.text {
+    position: absolute;
+    width: 303px;
+    height: 39px;
+    left: 809px;
+    top: 850px;
+
+    font-family: 'Bio Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 32px;
+    line-height: 39px;
+    text-align: center;
+
+    color: #C0C0C0;
+}
+
+.loading:after{
+    content: '';
+    position: absolute;
+    display: block;
+
+    width: 230px;
+    height: 2px;
+    left: 846px;
+    top: 910px;
+    
+    background: #acacacd8;
+    z-index: 2;
+    transform-origin: left;
+    transform: scaleX(0);
+    animation: animate 2s infinite alternate;
+}
+
+@keyframes animate{
+    0%
+    {
+        transform: translateX(0) scaleX(0);
+        transform-origin: center;
+        left: 846px;
+        right: auto;
+    }
+
+    45%
+    {
+        transform: translateX(0) scaleX(1);
+        transform-origin: center;
+        left: 846px;
+        right: auto;
+    }
+
+    50%
+    {
+        transform: translateX(0) scaleX(1);
+        transform-origin: center;
+        left: 846px;
+        right: auto;
+    }
+
+    100%
+    {
+        transform: translateX(0) scaleX(0);
+        transform-origin: center;
+        left: 846px;
+        right: auto;
+    }
+}

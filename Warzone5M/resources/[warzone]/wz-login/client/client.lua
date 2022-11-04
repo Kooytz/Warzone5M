@@ -21,8 +21,14 @@ AddEventHandler("onClientResourceStart",function(resourceName)
 		return
 	end
 
-    print("iniciei")
-
 	TriggerServerEvent("Queue:playerConnect")
-    ShutdownLoadingScreen()
+	ShutdownLoadingScreen()
+	ShutdownLoadingScreenNui()
+
+	-- COLOCAR FUNC DE MUDAR DE BUCKET
+	-- COLOCAR MESMA INTERFACE DA LOAD PRA ENTRAR APÓS A LOAD = Obtendo perfil online
+
+
+	-- test
+	SendNUIMessage({ action = "GetProfile" })
 end)
