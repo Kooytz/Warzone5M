@@ -5,13 +5,12 @@ body {
 }
 
 #GetProfileOnline {
-    display: none;
-    justify-content: center;
-    right:0;
-    bottom:0;
+    position: fixed;
+    right: 0;
+    bottom: 0;
     width: 100vw;
     height: 100vh;
-    object-fit:cover;
+    object-fit: cover;
     
     background: url(warzone_art_loadingscreen.png)
 }

@@ -21,16 +21,17 @@ AddEventHandler("onClientResourceStart",function(resourceName)
 		return
 	end
 
+	-- VEM UMAS COISAS NATES DO CHAT, VERIFICAR LÁ
+
+	Citizen.Wait(1000)
+	
+	SendNUIMessage({ action = "GetProfile" })
+	SetNuiFocus(true,true)
 	TriggerServerEvent("Queue:playerConnect")
 	ShutdownLoadingScreen()
 	ShutdownLoadingScreenNui()
 
 	-- COLOCAR FUNC DE MUDAR DE BUCKET
 	-- COLOCAR MESMA INTERFACE DA LOAD PRA ENTRAR APÓS A LOAD = Obtendo perfil online
-
-
-	-- test
-	SendNUIMessage({ action = "GetProfile" })
-	SetNuiFocus(true,true)
-	print("uiuisustei")
+	
 end)
