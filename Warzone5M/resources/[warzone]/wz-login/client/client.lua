@@ -27,6 +27,10 @@ AddEventHandler("onClientResourceStart",function(resourceName)
 
 	SendNUIMessage({ action = "Connect" }) -- Conectando-se com os servidores online
 
+	--Citizen.Wait(9000)
+
+	--SendNUIMessage({ action = "Update" }) -- Verificando atualização...
+
 	SetNuiFocus(true,true)
 	TriggerServerEvent("Queue:playerConnect")
 	ShutdownLoadingScreen()
