@@ -24,8 +24,9 @@ AddEventHandler("onClientResourceStart",function(resourceName)
 	-- VEM UMAS COISAS NATES DO CHAT, VERIFICAR LÁ
 
 	Citizen.Wait(1000)
-	
-	SendNUIMessage({ action = "GetProfile" })
+
+	SendNUIMessage({ action = "Connect" }) -- Conectando-se com os servidores online
+
 	SetNuiFocus(true,true)
 	TriggerServerEvent("Queue:playerConnect")
 	ShutdownLoadingScreen()
@@ -33,5 +34,7 @@ AddEventHandler("onClientResourceStart",function(resourceName)
 
 	-- COLOCAR FUNC DE MUDAR DE BUCKET
 	-- COLOCAR MESMA INTERFACE DA LOAD PRA ENTRAR APÓS A LOAD = Obtendo perfil online
-	
+
+
+	-- Em andamento: Obtendo informações da loja
 end)

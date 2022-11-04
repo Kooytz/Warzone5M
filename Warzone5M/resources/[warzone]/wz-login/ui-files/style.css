@@ -4,7 +4,8 @@ body {
     margin: 0;
 }
 
-#GetProfileOnline {
+#ConnectOnline {
+    /*display: none;*/
     position: fixed;
     right: 0;
     bottom: 0;
@@ -58,6 +59,24 @@ body {
     font-size: 32px;
     line-height: 39px;
     text-align: center;
+
+    color: #C0C0C0;
+}
+
+.ConnectText {
+    position: absolute;
+    width: 303px;
+    height: 39px;
+    left: 760px;
+    top: 850px;
+
+    font-family: 'Bio Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 32px;
+    line-height: 39px;
+    text-align: center;
+    white-space: nowrap;
 
     color: #C0C0C0;
 }
