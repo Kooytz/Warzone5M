@@ -10,7 +10,7 @@ local Tunnel = module("wz-core","lib/Tunnel")
 
 WZ = {}
 Tunnel.bindInterface("wz-login",WZ)
-CORESERVER = Tunnel.getInterface("wz-login")
+WZServer = Tunnel.getInterface("wz-login")
 
 -----------------------------------------------------------------------------------------------------------------------------------------
 -- [[ ONCLIENTRESOURCESTART ]]
@@ -26,6 +26,7 @@ AddEventHandler("onClientResourceStart",function(resourceName)
 	Citizen.Wait(1000)
 
 	SendNUIMessage({ action = "Connect" }) -- Conectando-se com os servidores online
+	ShutdownLoadingScreenNui()
 
 	Citizen.Wait(9000)
 
@@ -33,12 +34,15 @@ AddEventHandler("onClientResourceStart",function(resourceName)
 
 	Citizen.Wait(3000)
 
-	SendNUIMessage({ action = "GetProfile" }) -- Obtendo perfil online
-
 	SetNuiFocus(true,true)
 	TriggerServerEvent("Queue:playerConnect")
 	ShutdownLoadingScreen()
-	ShutdownLoadingScreenNui()
+
+	SendNUIMessage({ action = "GetProfile" }) -- Obtendo perfil online
+
+	WZServer.Login()
+
+-- AQUI QUE VAI ADICIONAR UMA NOVA CONTA AO STEAM DA PESSOA CASO NÃO TENHA / VERIFICAR BANIMENTO / VERIFICAR SE JÁ TEM CONTA
 
 	-- COLOCAR FUNC DE MUDAR DE BUCKET
 	-- COLOCAR MESMA INTERFACE DA LOAD PRA ENTRAR APÓS A LOAD = Obtendo perfil online

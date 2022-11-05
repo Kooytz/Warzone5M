@@ -299,7 +299,7 @@ end
 -----------------------------------------------------------------------------------------------------------------------------------------
 
 AddEventHandler("Queue:playerConnecting",function(source,identifiers,deferrals)
-	local steam = CORE.getIdentities(source)
+	--[[local steam = CORE.getIdentities(source)
 	local discord = CORE.getPlayerDiscord(source)
 	if steam then
 		local infoAccount = CORE.infoAccount(steam)
@@ -311,7 +311,9 @@ AddEventHandler("Queue:playerConnecting",function(source,identifiers,deferrals)
 		end
 	else
 		deferrals.done("Conexão perdida com a Steam.")
-	end
+	end]]
+
+	deferrals.done()
 	TriggerEvent("Queue:removeQueue",identifiers)
 end)
 
