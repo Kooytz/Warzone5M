@@ -25,22 +25,23 @@ AddEventHandler("onClientResourceStart",function(resourceName)
 
 	Citizen.Wait(1000)
 
-	SendNUIMessage({ action = "Connect" }) -- Conectando-se com os servidores online
+	SendNUIMessage({ action = "Connect" })
 	ShutdownLoadingScreenNui()
 
-	Citizen.Wait(9000)
+	Citizen.Wait(6000)
 
-	SendNUIMessage({ action = "Update" }) -- Verificando atualização...
+	SendNUIMessage({ action = "Update" })
 
 	Citizen.Wait(3000)
 
-	SetNuiFocus(true,true)
 	TriggerServerEvent("Queue:playerConnect")
 	ShutdownLoadingScreen()
+	SendNUIMessage({ action = "GetProfile" })
 
-	SendNUIMessage({ action = "GetProfile" }) -- Obtendo perfil online
+	Citizen.Wait(3000)
 
-	WZServer.Login()
+	local loginType = WZServer.Login()
+	print(variavel)
 
 -- AQUI QUE VAI ADICIONAR UMA NOVA CONTA AO STEAM DA PESSOA CASO NÃO TENHA / VERIFICAR BANIMENTO / VERIFICAR SE JÁ TEM CONTA
 

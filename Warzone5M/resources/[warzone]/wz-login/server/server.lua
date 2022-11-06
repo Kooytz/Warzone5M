@@ -18,8 +18,32 @@ WZClient = Tunnel.getInterface("wz-login")
 -- [[ LOGIN ]]
 -----------------------------------------------------------------------------------------------------------------------------------------
 
+CORE.prepare("accountsBanneds/bannedTime","SELECT * FROM accounts_banneds WHERE steam = @steam")
+
 function WZ.Login()
-	
+	local source = CORE.loginSource()
+	local steam = CORE.getIdentities(source)
+	if steam then
+		if not CORE.checkBanned(steam) then
+			print("não está banido")
+			--local infoAccount = CORE.infoAccount(steam)
+			--if infoAccount then
+			--	if infoAccount["whitelist"] then
+			--		print("Concluído: Obter dados de perfil")
+			--	else
+			--		print("Tela de login")
+			--	end
+			--else
+			--	print("Error: Ocorreu um problema ao obter dados de perfil.")
+			--end
+		else
+			local timeCheck = CORE.query("accountsBanneds/bannedTime",{ steam = steam })
+			print(timeCheck)
+			return timeCheck
+		end
+	else
+		print("Error: Conexão perdida com a steam.")
+	end
 end
 
 

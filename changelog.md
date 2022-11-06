@@ -13,3 +13,7 @@
 
 **05/11/2022**
 6. New features to login
+
+**06/11/2022**
+
+6.1 New features to login

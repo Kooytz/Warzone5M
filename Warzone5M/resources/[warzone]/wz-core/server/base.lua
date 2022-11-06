@@ -298,6 +298,8 @@ end
 -- [[ PLAYERCONNECTING ]]
 -----------------------------------------------------------------------------------------------------------------------------------------
 
+local loginSource = nil
+
 AddEventHandler("Queue:playerConnecting",function(source,identifiers,deferrals)
 	local steam = CORE.getIdentities(source)
 	local discord = CORE.getPlayerDiscord(source)
@@ -313,8 +315,13 @@ AddEventHandler("Queue:playerConnecting",function(source,identifiers,deferrals)
 		deferrals.done("Conexão perdida com a Steam.")
 	end
 
+	loginSource = source
 	TriggerEvent("Queue:removeQueue",identifiers)
 end)
+
+function CORE.loginSource()
+	return loginSource
+end
 
 -----------------------------------------------------------------------------------------------------------------------------------------
 -- [[ CHARACTERCHOSEN ]]
