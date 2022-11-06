@@ -18,8 +18,6 @@ WZClient = Tunnel.getInterface("wz-login")
 -- [[ LOGIN ]]
 -----------------------------------------------------------------------------------------------------------------------------------------
 
-CORE.prepare("accountsBanneds/bannedTime","SELECT * FROM accounts_banneds WHERE steam = @steam")
-
 function WZ.Login()
 	local source = CORE.loginSource()
 	local steam = CORE.getIdentities(source)
@@ -38,8 +36,7 @@ function WZ.Login()
 			--end
 		else
 			local timeCheck = CORE.query("accountsBanneds/bannedTime",{ steam = steam })
-			print(timeCheck)
-			return timeCheck
+			return { "banned", timeCheck[1].time }
 		end
 	else
 		print("Error: Conexão perdida com a steam.")

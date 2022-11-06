@@ -21,7 +21,7 @@ AddEventHandler("onClientResourceStart",function(resourceName)
 		return
 	end
 
-	-- VEM UMAS COISAS NATES DO CHAT, VERIFICAR LÁ
+-- VEM UMAS COISAS NATES DO CHAT, VERIFICAR LÁ
 
 	Citizen.Wait(1000)
 
@@ -41,13 +41,18 @@ AddEventHandler("onClientResourceStart",function(resourceName)
 	Citizen.Wait(3000)
 
 	local loginType = WZServer.Login()
-	print(variavel)
+
+	if loginType[1] == "banned" then
+		print(loginType[1], loginType[2])
+
+		-- AQUI VIRÁ A TELA DE BANIDO + O TEMPO DO BANIMENTO // COLOCAR PRA SE O TEMPO FOR > (MAIOR QUE) 9999 RETORNAR PERMANENTE
+	end
 
 -- AQUI QUE VAI ADICIONAR UMA NOVA CONTA AO STEAM DA PESSOA CASO NÃO TENHA / VERIFICAR BANIMENTO / VERIFICAR SE JÁ TEM CONTA
 
-	-- COLOCAR FUNC DE MUDAR DE BUCKET
-	-- COLOCAR MESMA INTERFACE DA LOAD PRA ENTRAR APÓS A LOAD = Obtendo perfil online
+-- COLOCAR FUNC DE MUDAR DE BUCKET
+-- COLOCAR MESMA INTERFACE DA LOAD PRA ENTRAR APÓS A LOAD = Obtendo perfil online
 
 
-	-- Em andamento: Obtendo informações da loja
+-- Em andamento: Obtendo informações da loja
 end)

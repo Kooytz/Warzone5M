@@ -30,6 +30,7 @@ CORE.prepare("accountsBanneds/getBanned","SELECT * FROM accounts_banneds WHERE s
 CORE.prepare("accountsBanneds/removeBanned","DELETE FROM accounts_banneds WHERE steam = @steam")
 CORE.prepare("accountsBanneds/insertBanned","INSERT INTO accounts_banneds(steam,time) VALUES(@steam,@time)")
 CORE.prepare("accountsBanneds/getTimeBanned","SELECT * FROM accounts_banneds WHERE steam = @steam AND (DATEDIFF(CURRENT_DATE,time) >= time)")
+CORE.prepare("accountsBanneds/bannedTime","SELECT time FROM accounts_banneds WHERE steam = @steam")
 
 -----------------------------------------------------------------------------------------------------------------------------------------
 -- [[ PLAYERDATA ]]

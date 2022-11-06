@@ -16,4 +16,4 @@
 
 **06/11/2022**
 
-6.1 New features to login
+7. Added banned features to login
