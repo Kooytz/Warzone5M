@@ -20,6 +20,7 @@ $(document).ready(() => {
             case "BanScreen":
                 $("#GetProfileOnline").css("display", "none");
                 $("#bannedError").css("display", "flex");
+                banReason();
             break;
         };
     });
@@ -28,3 +29,9 @@ $(document).ready(() => {
 $(document).on("click",".quitButton",function(){
     $.post("http://wz-login/quitButton");
 });
+
+const banReason = () => {
+    $.post("http://wz-login/infoBan",JSON.stringify({}),(data) => {
+        $(".bannedText").html(`<sub>${(data["banReason"])}</sub>`);    
+    });
+}

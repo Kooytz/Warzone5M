@@ -157,7 +157,7 @@ body {
 }
 
 #bannedError {
-    display: none;
+    /*display: none;*/
     position: absolute;
     width: 1920px;
     height: 1080px;
@@ -165,6 +165,23 @@ body {
     top: 0px;
 
     background: url(login_error.png);
+}
+
+.bannedText {
+    position: absolute;
+    width: 600px;
+    height: 47px;
+    left: 340px;
+    top: 430px;
+    
+    font-family: 'Bio Sans';
+    font-style: normal;
+    font-weight: 355;
+    font-size: 22px;
+    line-height: 18px;
+    letter-spacing: 0.03em;
+    
+    color: #6A6967;
 }
 
 .quitButton {

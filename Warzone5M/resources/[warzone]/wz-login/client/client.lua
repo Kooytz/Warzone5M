@@ -16,7 +16,7 @@ WZServer = Tunnel.getInterface("wz-login")
 -- [[ VARIABLES ]]
 -----------------------------------------------------------------------------------------------------------------------------------------
 
-local kickdrop = ""
+local banReason = ""
 
 -----------------------------------------------------------------------------------------------------------------------------------------
 -- [[ ONCLIENTRESOURCESTART ]]
@@ -49,14 +49,14 @@ AddEventHandler("onClientResourceStart",function(resourceName)
 	local loginType = WZServer.Login()
 
 	if loginType[1] == "banned" then
-		print(loginType[1], loginType[2])
+		--print(loginType[1], loginType[2])
 		SetNuiFocus(true,true)
 		SendNUIMessage({ action = "BanScreen" })
 
 		if loginType[2] > 1000 then
-			kickdrop = "Conta banida permanentemente. Para mais informações acesse: https://discord.gg/colocar-link-do-discord."
+			banReason = "Conta banida permanentemente. Para mais informações acesse: https://discord.gg/colocar-link-do-discord."
 		else
-			kickdrop = "Conta banida por "..loginType[2].." dias. Para mais informações acesse: https://discord.gg/colocar-link-do-discord."
+			banReason = "Conta banida por "..loginType[2].." dias. Para mais informações acesse: https://discord.gg/colocar-link-do-discord."
 		end
 
 		-- AQUI VIRÁ A TELA DE BANIDO + O TEMPO DO BANIMENTO
@@ -76,5 +76,13 @@ end)
 -----------------------------------------------------------------------------------------------------------------------------------------
 
 RegisterNUICallback("quitButton",function()
-	WZServer.LoginDrop(kickdrop)
+	WZServer.LoginDrop(banReason)
+end)
+
+-----------------------------------------------------------------------------------------------------------------------------------------
+-- [[ INFO BAN ]]
+-----------------------------------------------------------------------------------------------------------------------------------------
+
+RegisterNUICallback("infoBan",function(data,cb)
+	cb({banReason = banReason})
 end)
