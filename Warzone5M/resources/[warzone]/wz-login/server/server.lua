@@ -24,6 +24,17 @@ function WZ.Login()
 	if steam then
 		if not CORE.checkBanned(steam) then
 			print("não está banido")
+
+			local haveAccount = CORE.query("accountsInfos/countPersons",{ steam = steam })
+			--print(parseInt(haveAccount[1]["qtd"]))
+
+			if haveAccount[1]["qtd"] == 0 then
+				print("este usuário não possui conta, irá cria-la")
+			elseif haveAccount[1]["qtd"] >= 1 then
+				print("tenho conta uiui")
+			end
+
+
 			--local infoAccount = CORE.infoAccount(steam)
 			--if infoAccount then
 			--	if infoAccount["whitelist"] then

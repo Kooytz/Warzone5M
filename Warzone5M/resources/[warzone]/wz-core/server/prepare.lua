@@ -21,6 +21,7 @@ CORE.prepare("accountsMain/infosUpdategems","UPDATE accounts_main SET gems = gem
 -----------------------------------------------------------------------------------------------------------------------------------------
 
 CORE.prepare("accountsInfos/getUsers","SELECT * FROM accounts_infos WHERE id = @id")
+CORE.prepare("accountsInfos/countPersons","SELECT COUNT(steam) as qtd FROM accounts_infos WHERE steam = @steam")
 
 -----------------------------------------------------------------------------------------------------------------------------------------
 -- [[ ACCOUNTS BANNEDS ]]

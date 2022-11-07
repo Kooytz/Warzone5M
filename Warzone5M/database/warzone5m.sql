@@ -53,4 +53,16 @@ CREATE TABLE IF NOT EXISTS `accounts_data` (
   KEY `dkey` (`dkey`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
--- Copiando dados para a tabela hellzonedb.summerz_playerdata: ~8 rows (aproximadamente)
+-- Copiando dados para a tabela warzone5m.accounts_data: ~8 rows (aproximadamente)
+
+-- Copiando estrutura para tabela warzone5m.accounts_infos
+CREATE TABLE IF NOT EXISTS `accounts_infos` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `steam` varchar(50) DEFAULT NULL,
+  `name` varchar(50) DEFAULT 'Individuo',
+  `played` int(11) DEFAULT 0,
+  PRIMARY KEY (`id`),
+  KEY `id` (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
+
+-- Copiando dados para a tabela warzone5m.accounts_infos: ~4 rows (aproximadamente)
