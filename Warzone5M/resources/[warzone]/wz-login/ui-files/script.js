@@ -22,6 +22,12 @@ $(document).ready(() => {
                 $("#bannedError").css("display", "flex");
                 banReason();
             break;
+
+            case "noAccountScreen":
+                $("#GetProfileOnline").css("display", "none");
+                $("#noAccountError").css("display", "flex");
+                noAccountMessage();
+            break;
         };
     });
 });
@@ -34,4 +40,14 @@ const banReason = () => {
     $.post("http://wz-login/infoBan",JSON.stringify({}),(data) => {
         $(".bannedText").html(`<sub>${(data["banReason"])}</sub>`);    
     });
+}
+
+const noAccountMessage = () => {
+    $(".noAccountText").html(`<sub>Primeiro login detectado. Clique no botão abaixo para registrar-se.
+    <br>
+    <br>
+    Qualquer usuário que for encontrado usando apelido agressivo, ofensivo, derrogatória ou culturalmente carregado estará sujeito a ter sua conta permanentemente banida.
+    <br>
+    <br>
+    Para mais informações, acesse https://discord.gg/colocar-link-do-discord.</sub>`);    
 }

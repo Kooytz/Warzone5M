@@ -234,3 +234,82 @@ body {
 .quitButtonText:hover {
     color: #e5e3e3;
 }
+
+#noAccountError {
+    display: none;
+    position: absolute;
+    width: 1920px;
+    height: 1080px;
+    left: 0px;
+    top: 0px;
+
+    background: url(login_error.png);
+}
+
+.noAccountText {
+    position: absolute;
+    width: 600px;
+    height: 47px;
+    left: 340px;
+    top: 430px;
+    
+    font-family: 'Bio Sans';
+    font-style: normal;
+    font-weight: 355;
+    font-size: 22px;
+    line-height: 18px;
+    letter-spacing: 0.03em;
+    
+    color: #6A6967;
+}
+
+.signUpButton {
+    position: absolute;
+    width: 432px;
+    height: 38px;
+    left: 340px;
+    top: 676px;
+    
+    background: rgba(25, 25, 25, 0.5);
+
+    border-top: 1px solid #4F4F4F;
+    border-bottom: 1px solid #4F4F4F;
+    border-left: 0px solid #4F4F4F;
+    border-right: 0px solid #4F4F4F;
+
+    transition-duration: 0.4s;
+}
+
+.signUpButton:hover {
+    background: #262317;
+
+    border-top: 1px solid #ffd130;
+    border-bottom: 1px solid #ffd130;
+    border-left: 0px solid #ffd130;
+    border-right: 0px solid #ffd130;
+}
+
+.signUpButtonText {
+    position: relative;
+    width: 432px;
+    height: 38px;
+    right: 1%;
+    bottom: 5%;
+
+    text-align: left;
+    text-indent: 18px;
+    letter-spacing: 0.035em;
+
+    font-family: 'Bio Sans';
+    font-style: normal;
+    font-weight: 355;
+    font-size: 18px;
+    line-height: 38px;
+
+    transition-duration: 0.4s;
+    color: #7C7B7B;
+}
+
+.signUpButtonText:hover {
+    color: #e5e3e3;
+}

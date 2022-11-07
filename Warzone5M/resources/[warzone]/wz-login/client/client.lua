@@ -29,7 +29,7 @@ AddEventHandler("onClientResourceStart",function(resourceName)
 
 -- VEM UMAS COISAS NATES DO CHAT, VERIFICAR LÁ
 
-	Citizen.Wait(500)
+	Citizen.Wait(1000)
 
 	SendNUIMessage({ action = "Connect" })
 	ShutdownLoadingScreenNui()
@@ -49,7 +49,6 @@ AddEventHandler("onClientResourceStart",function(resourceName)
 	local loginType = WZServer.Login()
 
 	if loginType[1] == "banned" then
-		--print(loginType[1], loginType[2])
 		SetNuiFocus(true,true)
 		SendNUIMessage({ action = "BanScreen" })
 
@@ -58,8 +57,9 @@ AddEventHandler("onClientResourceStart",function(resourceName)
 		else
 			banReason = "Conta banida por "..loginType[2].." dias. Para mais informações, acesse https://discord.gg/colocar-link-do-discord."
 		end
-
-		-- AQUI VIRÁ A TELA DE BANIDO + O TEMPO DO BANIMENTO
+	elseif loginType == "noAccountFounded" then
+		SetNuiFocus(true,true)
+		SendNUIMessage({ action = "noAccountScreen" })
 	end
 
 -- AQUI QUE VAI ADICIONAR O NOVO PERSONAGEM STEAM DA PESSOA CASO NÃO TENHA / VERIFICAR SE JÁ TEM CONTA
@@ -85,4 +85,11 @@ end)
 
 RegisterNUICallback("infoBan",function(data,cb)
 	cb({banReason = banReason})
+end)
+
+-----------------------------------------------------------------------------------------------------------------------------------------
+-- [[ SIGN UP BUTTON ]]
+-----------------------------------------------------------------------------------------------------------------------------------------
+
+RegisterNUICallback("signUpButton",function()
 end)
