@@ -29,7 +29,7 @@ AddEventHandler("onClientResourceStart",function(resourceName)
 
 -- VEM UMAS COISAS NATES DO CHAT, VERIFICAR LÁ
 
-	Citizen.Wait(1000)
+	Citizen.Wait(500)
 
 	SendNUIMessage({ action = "Connect" })
 	ShutdownLoadingScreenNui()
@@ -62,7 +62,7 @@ AddEventHandler("onClientResourceStart",function(resourceName)
 		-- AQUI VIRÁ A TELA DE BANIDO + O TEMPO DO BANIMENTO
 	end
 
--- AQUI QUE VAI ADICIONAR UMA NOVA CONTA AO STEAM DA PESSOA CASO NÃO TENHA / VERIFICAR BANIMENTO / VERIFICAR SE JÁ TEM CONTA
+-- AQUI QUE VAI ADICIONAR O NOVO PERSONAGEM STEAM DA PESSOA CASO NÃO TENHA / VERIFICAR SE JÁ TEM CONTA
 
 -- COLOCAR FUNC DE MUDAR DE BUCKET
 -- COLOCAR MESMA INTERFACE DA LOAD PRA ENTRAR APÓS A LOAD = Obtendo perfil online

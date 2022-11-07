@@ -15,5 +15,7 @@
 6. New features to login
 
 **06/11/2022**
-
 7. Added banned features to login
+
+**07/11/2022**
+8. Features to new account
