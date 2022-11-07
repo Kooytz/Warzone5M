@@ -7,15 +7,3 @@
 2. created files wz-login/wz-lobby
 3. DB updated
 
-**04/11/2022**
-4. Fixed loadingscreen
-5. Added some features to login
-
-**05/11/2022**
-6. New features to login
-
-**06/11/2022**
-7. Added banned features to login
-
-**07/11/2022**
-8. Features to new account
