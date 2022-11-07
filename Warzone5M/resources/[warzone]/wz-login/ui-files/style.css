@@ -157,7 +157,7 @@ body {
 }
 
 #bannedError {
-    /*display: none;*/
+    display: none;
     position: absolute;
     width: 1920px;
     height: 1080px;
