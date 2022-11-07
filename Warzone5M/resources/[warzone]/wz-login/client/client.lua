@@ -54,9 +54,9 @@ AddEventHandler("onClientResourceStart",function(resourceName)
 		SendNUIMessage({ action = "BanScreen" })
 
 		if loginType[2] > 1000 then
-			banReason = "Conta banida permanentemente. Para mais informações acesse: https://discord.gg/colocar-link-do-discord."
+			banReason = "Conta banida permanentemente. Para mais informações, acesse https://discord.gg/colocar-link-do-discord."
 		else
-			banReason = "Conta banida por "..loginType[2].." dias. Para mais informações acesse: https://discord.gg/colocar-link-do-discord."
+			banReason = "Conta banida por "..loginType[2].." dias. Para mais informações, acesse https://discord.gg/colocar-link-do-discord."
 		end
 
 		-- AQUI VIRÁ A TELA DE BANIDO + O TEMPO DO BANIMENTO
