@@ -24,3 +24,7 @@ $(document).ready(() => {
         };
     });
 });
+
+$(document).on("click",".quitButton",function(){
+    $.post("http://wz-login/quitButton");
+});

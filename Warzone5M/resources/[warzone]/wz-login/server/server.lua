@@ -39,11 +39,18 @@ function WZ.Login()
 			return { "banned", timeCheck[1].time }
 		end
 	else
-		print("Error: Conexão perdida com a steam.")
+		DropPlayer(source,"Conexão perdida com a steam.")
 	end
 end
 
+-----------------------------------------------------------------------------------------------------------------------------------------
+-- [[ LOGIN DROP ]]
+-----------------------------------------------------------------------------------------------------------------------------------------
 
+function WZ.LoginDrop(reason)
+	local source = CORE.loginSource()
+	DropPlayer(source,reason)
+end
 
 
 

@@ -13,6 +13,12 @@ Tunnel.bindInterface("wz-login",WZ)
 WZServer = Tunnel.getInterface("wz-login")
 
 -----------------------------------------------------------------------------------------------------------------------------------------
+-- [[ VARIABLES ]]
+-----------------------------------------------------------------------------------------------------------------------------------------
+
+local kickdrop = ""
+
+-----------------------------------------------------------------------------------------------------------------------------------------
 -- [[ ONCLIENTRESOURCESTART ]]
 -----------------------------------------------------------------------------------------------------------------------------------------
 
@@ -44,10 +50,16 @@ AddEventHandler("onClientResourceStart",function(resourceName)
 
 	if loginType[1] == "banned" then
 		print(loginType[1], loginType[2])
+		SetNuiFocus(true,true)
+		SendNUIMessage({ action = "BanScreen" })
 
-		SendNUIMessage({ action = "BanScreen" })	
+		if loginType[2] > 1000 then
+			kickdrop = "Conta banida permanentemente. Para mais informações acesse: https://discord.gg/colocar-link-do-discord."
+		else
+			kickdrop = "Conta banida por "..loginType[2].." dias. Para mais informações acesse: https://discord.gg/colocar-link-do-discord."
+		end
 
-		-- AQUI VIRÁ A TELA DE BANIDO + O TEMPO DO BANIMENTO // COLOCAR PRA SE O TEMPO FOR > (MAIOR QUE) 9999 RETORNAR PERMANENTE
+		-- AQUI VIRÁ A TELA DE BANIDO + O TEMPO DO BANIMENTO
 	end
 
 -- AQUI QUE VAI ADICIONAR UMA NOVA CONTA AO STEAM DA PESSOA CASO NÃO TENHA / VERIFICAR BANIMENTO / VERIFICAR SE JÁ TEM CONTA
@@ -60,8 +72,9 @@ AddEventHandler("onClientResourceStart",function(resourceName)
 end)
 
 -----------------------------------------------------------------------------------------------------------------------------------------
--- [[ BANNED ERROR ]]
+-- [[ QUIT BUTTON ]]
 -----------------------------------------------------------------------------------------------------------------------------------------
 
-RegisterNUICallback("bannedError",function(data)
+RegisterNUICallback("quitButton",function()
+	WZServer.LoginDrop(kickdrop)
 end)
