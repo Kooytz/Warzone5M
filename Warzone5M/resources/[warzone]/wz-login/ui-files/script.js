@@ -16,6 +16,11 @@ $(document).ready(() => {
                 $("#UpdateOnline").css("display", "none");
                 $("#GetProfileOnline").css("display", "flex");
             break;
+
+            case "BanScreen":
+                $("#GetProfileOnline").css("display", "none");
+                $("#bannedError").css("display", "flex");
+            break;
         };
     });
 });

@@ -155,3 +155,65 @@ body {
         right: auto;
     }
 }
+
+#bannedError {
+    display: none;
+    position: absolute;
+    width: 1920px;
+    height: 1080px;
+    left: 0px;
+    top: 0px;
+
+    background: url(login_error.png);
+}
+
+.quitButton {
+    position: absolute;
+    width: 432px;
+    height: 38px;
+    left: 340px;
+    top: 676px;
+    
+    background: rgba(25, 25, 25, 0.5);
+
+    border-top: 1px solid #4F4F4F;
+    border-bottom: 1px solid #4F4F4F;
+    border-left: 0px solid #4F4F4F;
+    border-right: 0px solid #4F4F4F;
+
+    transition-duration: 0.4s;
+}
+
+.quitButton:hover {
+    background: #262317;
+
+    border-top: 1px solid #ffd130;
+    border-bottom: 1px solid #ffd130;
+    border-left: 0px solid #ffd130;
+    border-right: 0px solid #ffd130;
+}
+
+.quitButtonText {
+    position: relative;
+    width: 432px;
+    height: 38px;
+    right: 1%;
+    bottom: 5%;
+
+    text-align: left;
+    text-indent: 18px;
+    letter-spacing: 0.035em;
+
+    font-family: 'Bio Sans';
+    font-style: normal;
+    font-weight: 355;
+    font-size: 18px;
+    line-height: 38px;
+
+    transition-duration: 0.4s;
+    color: #7C7B7B;
+}
+
+.quitButtonText:hover {
+    color: #e5e3e3;
+}

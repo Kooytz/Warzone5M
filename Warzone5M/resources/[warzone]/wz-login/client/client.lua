@@ -45,6 +45,8 @@ AddEventHandler("onClientResourceStart",function(resourceName)
 	if loginType[1] == "banned" then
 		print(loginType[1], loginType[2])
 
+		SendNUIMessage({ action = "BanScreen" })	
+
 		-- AQUI VIRÁ A TELA DE BANIDO + O TEMPO DO BANIMENTO // COLOCAR PRA SE O TEMPO FOR > (MAIOR QUE) 9999 RETORNAR PERMANENTE
 	end
 
@@ -55,4 +57,11 @@ AddEventHandler("onClientResourceStart",function(resourceName)
 
 
 -- Em andamento: Obtendo informações da loja
+end)
+
+-----------------------------------------------------------------------------------------------------------------------------------------
+-- [[ BANNED ERROR ]]
+-----------------------------------------------------------------------------------------------------------------------------------------
+
+RegisterNUICallback("bannedError",function(data)
 end)
