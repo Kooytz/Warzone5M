@@ -7,3 +7,6 @@
 2. created files wz-login/wz-lobby
 3. DB updated
 
+**04/11/2022**
+4. start.bat updated to build
+5. created files wz-login/wz-lobby
