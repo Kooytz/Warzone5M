@@ -29,7 +29,14 @@ function WZ.Login()
 			--print(parseInt(haveAccount[1]["qtd"]))
 
 			if haveAccount[1]["qtd"] == 0 then
-				print("este usuário não possui conta, irá cria-la")
+				return "noAccountFounded"
+
+
+				
+				-- MESMA TELA DE BANNED INFORMANDO QUE NÃO TEM CONTA COM O BOTÃO "OK" INDICANDO "CRIAR NOVA CONTA" => IRÁ VIR UMA TELA SIMPLES
+				-- (NÃO TENHO BASE PRA ELA, IMITA A DA PRÓPRIA TELA DE BANIMENTO FDS) NA QUAL IRÁ APARECER UMA CAIXA PRA DIGITAR O APELIDO DE USUÁRIO + #ID QUE ELE VAI RECEBER =>
+				-- ESSE VALOR VAI RETORNAR PRA CÁ FAZENDO COM QUE AQUI EM ALGUM LUGAR TENHA O QUERY DE APLICAR UMA NOVA INFORMAÇÃO NA TABELA DO BANCO DE DADOS + APLICAR WHITELIST NO
+				-- DB TAMBÉM => PRA DEPOIS VIR A TELA DE CONTINUAÇÃO OBTENDO PERFIL ONLINE
 			elseif haveAccount[1]["qtd"] >= 1 then
 				print("tenho conta uiui")
 			end
